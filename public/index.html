@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Chatroom</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="screens">
+    <li class="login screen">
+      <div class="form">
+        <h3 id="title">Enter your name</h3>
+        <input id="usernameInput" type="text" maxlength="14" />
+        <h3 id="title">Select a color</h3>
+        <input type="color" id="usernameColor" value="#ff0000">
+      </div>
+    </li>
+
+    <li class="chat screen">
+      <div id="chat-area">
+        <ul id="messages"></ul>
+      </div>
+      <input id="inputMessage" placeholder="Type here..." />
+    </li>
+  </ul>
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

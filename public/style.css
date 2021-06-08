@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body { 
+  height: 100%;
+  margin: 0; padding: 0;
+  background-color: #333;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+}
+
+.screens {
+  height: 100%;
+  margin: 0; padding: 0;
+  width: 100%;
+}
+
+.screen {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/* Login Page */
+
+.login.screen {
+  display: flex;
+  background-color: #000;
+}
+
+.login.screen .form {
+  text-align: center;
+  margin: auto;
+}
+
+.login.screen .form #usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.login.screen #title {
+  font-size: 200%;
+}
+
+.login.screen #usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.login.screen #title, .login.screen #usernameInput {
+  color: #fff;
+  font-weight: 100;
+}
+
+/* Chat Area */
+
+.chat.screen {
+  display: none;
+}
+
+#chat-area{
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+.username {
+  font-weight: 700;
+  overflow: hidden;
+  margin-right: 15px;
+  padding: 5px;
+  text-align: right;
+  background-color: #000;
+}
+
+#messages {  
+  height: 100%; 
+  list-style-type: none; 
+  margin: 0; padding: 0; 
+  overflow-y: scroll; }
+#messages > li { padding: 0.5rem 1rem; }
+.log{
+  margin: 5px;
+}
+
+/* Input */
+
+#inputMessage {
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  outline: none;
+  padding-left: 10px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
