@@ -14,11 +14,15 @@ server.listen(port, () => {
 app.use(express.static(path.join(__dirname,'./public')));
 
 io.on('connection', (socket) => {
-  
+
   socket.on('add user', (username) => {
     //store username in socket session
     socket.username = username;
-    socket.broadcast.emit('user joined', { username: socket.username });
+
+    // emit globally to all clients that user joined.
+    io.emit('user joined', {
+      username: socket.username 
+    });
   });
 
   socket.on('chat message', (data) => {
@@ -29,7 +33,11 @@ io.on('connection', (socket) => {
   });
   
   socket.on('disconnect', () => {
-    socket.broadcast.emit('user left', { username: socket.username });
+    console.log('user disconnected');
+    io.emit('user left', { 
+      username: socket.username 
+    });
+    
   });
 
 });

@@ -46,7 +46,6 @@ const log = (message, options) => {
 const addChatMessage = (data, options = {}) => {
   const $usernameDiv = $('<span class="username"/>')
     .text(data.username)
-    .css('color', getUsernameColor(data.username));
   const $messageBodyDiv = $('<span class="messageBody">')
     .text(data.message);
 
@@ -58,22 +57,21 @@ const addChatMessage = (data, options = {}) => {
   $messages.append($messageDiv);
 }
 
-const getUsernameColor = (username) => {
-  
-}
 
-
+// when server emits 'chat message', add it
 socket.on('chat message', (data) => {
   addChatMessage(data);
 })
 
+// server emits 'user joined', log to chat
 socket.on('user joined', (data) =>{
   log(`${data.username} joined`);
 });
 
-socket.on('user left'), (data) => {
+// server emits 'user left', log to chat
+socket.on('user left', (data) => {
   log(`${data.username} left`);
-}
+});
 
 $window.keydown(event => {
   // When client hits ENTER on keyboard
